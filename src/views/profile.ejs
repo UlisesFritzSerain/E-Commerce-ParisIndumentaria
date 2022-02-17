@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    <title>Perfil</title>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <h1>Bienvenido a tu perfil</h1>
+        <div class='div-profile'>
+            <h2><%= user.first_name%> <%= user.last_name %> </h2>
+            <img src="/img/users/<%= user.img %>" alt="Img de perfil">
+            <p><strong>Email:</strong> <%= user.email %> </p>
+            <% if(user.category == 'admin'){ %> 
+                <p><strong>Categoría:</strong>  Administrador </p>
+            <% }else{ %>
+                <p><strong>Categoría:</strong>  Cliente </p>
+            <% } %> 
+        </div>
+        
+        <a href="/" class='boton-profile'><p>Seguir mirando indumentaria ></p></a>
+    </main>
+    <%- include('./partials/footer.ejs') %> 
+    <script type="text/javascript" src="../jquey/jquery-3.6.0.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
